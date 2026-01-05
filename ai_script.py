@@ -81,6 +81,23 @@ MODELS = MODELS = [
         "proj": "moondream2-mmproj.gguf"
     }
 ]
+import json
+
+HISTORY_FILE = "chat_memory.json"
+
+def save_history(history):
+    with open(HISTORY_FILE, "w") as f:
+        json.dump(history, f, indent=4)
+
+def load_history():
+    if os.path.exists(HISTORY_FILE):
+        try:
+            with open(HISTORY_FILE, "r") as f:
+                return json.load(f)
+        except:
+            pass
+    # Default system prompt if no file exists
+    return [{"role": "system", "content": "You are a helpful assistant."}]
 def main():
     console.print(Panel("SYSTEM MONITOR ACTIVE", title="[bold green]AI HUB[/]"))
     console.print(get_stats())
@@ -98,13 +115,18 @@ def main():
         
         # Load with GPU Layers set to -1 (attempts GPU offload)
         llm = Llama(model_path=path, chat_handler=handler, n_gpu_layers=-1, n_ctx=2048, verbose=False)
-
+    chat_history = load_history()
     console.print("[green]✓ Ready. Prefix '?' to search or enter an image path.[/]")
 
     while True:
         console.print(get_stats())
         query = Prompt.ask("\n[bold cyan]>>>[/]").strip()
         if query.lower() in ["exit", "quit"]: break
+        if query.lower() == "/clear":
+            chat_history = [{"role": "system", "content": "You are a helpful assistant."}]
+            save_history(chat_history)
+            console.print("[bold red]Memory Wiped![/]")
+            continue
         
         img_b64 = None
         if any(query.lower().endswith(ext) for ext in [".png", ".jpg", ".jpeg"]):
@@ -115,17 +137,37 @@ def main():
                 img.save(buf, format="JPEG")
                 img_b64 = f"data:image/jpeg;base64,{base64.b64encode(buf.getvalue()).decode('utf-8')}"
                 query = "Describe this image."
+        # Stage 1: Message receiving
+        chat_history.append({"role": "user", "content": query})
 
-        with console.status("[magenta]AI is processing..."):
-            # FIXED LOGIC: Send simple text for Llama 1B, only use complex Dict for Vision
+        with console.status("[magenta]Receiving your message") as status:
+            # Stage 2: message processing
+            status.update("[yellow]AI is processing...")
+            
             if not img_b64:
-                # Use simple completion for small models to avoid structure confusion
-                output = llm(f"User: {query}\nAssistant:", max_tokens=512, stop=["User:"])
-                res = output["choices"][0]["text"].strip()
+                # ✅ This now sends the full conversation history!
+                output = llm.create_chat_completion(
+                    messages=chat_history, 
+                    max_tokens=512
+                )
+                res = output["choices"][0]["message"]["content"].strip()
             else:
+                # Vision mode usually works best with single-turn (current image only)
                 messages = [{"role": "user", "content": [{"type": "text", "text": query}, {"type": "image_url", "image_url": {"url": img_b64}}]}]
                 res = llm.create_chat_completion(messages=messages)["choices"][0]["message"]["content"]
+                
+            status.update("[cyan] Preparing to answer...")
+            import time
+            time.sleep(0.5)
         
+        # Save the AI's response to memory
+        chat_history.append({"role": "assistant", "content": res})
+
+        # Keep memory window small for performance (1 System + 12 Chat msgs)
+        if len(chat_history) > 13:
+            chat_history = [chat_history[0]] + chat_history[-12:]
+        
+        save_history(chat_history)
         console.print(Panel(res, title="Response", border_style="blue", subtitle=f"Using {selected['name']}"))
 
 if __name__ == "__main__":
