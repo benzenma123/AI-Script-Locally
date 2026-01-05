@@ -14,14 +14,14 @@ Here are some thing that u should install before run the script base on what os 
   #### Windows:
   - https://www.python.org/ftp/python/3.14.2/python-3.14.2-amd64.exe
   #### Linux (depends)
-Gentoo Linux:
+##### Gentoo Linux:
 - sudo emerge --ask python3
-Arch/Arch-Based
+##### Arch/Arch-Based
 - sudo pacman -S python python3
 - yay -S python3
-Debian/Ubuntu
+##### Debian/Ubuntu
 - sudo apt install python3 python
-Other Linux
+##### Other Linux
 - sudo (your package manager) python
 
 ## How to run the script
