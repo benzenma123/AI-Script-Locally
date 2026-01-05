@@ -35,3 +35,9 @@ python3 ai_script.py
 ![Darwin Kernel](https://img.shields.io/badge/Darwin-XNU-000000?style=flat-square&logo=Apple&logoColor=white)
 ## Hints
 - You can run this script (after run this script the first time for installation) without internet, just need the system had python already and plug in the power since it using cpu only mode and might comsum a lot of energy and cpu cores/threads
+
+# AI Model
+| Avalible model | Desscription | RAM Consuming |
+|----------------|--------------|---------------|
+|  Llama 3.2 1B  | Light AI Model for system under 8gb of RAM| 1.5Gb~|
+|MoonDream2| Not work yet as it url had some problem| 2Gb+
