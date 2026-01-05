@@ -4,12 +4,12 @@
   </p>
 ---
 
-## Tested OS
+# Tested OS
 ![Linux](https://img.shields.io/badge/Arch_Linux-Main-1793D1?style=flat-square&logo=Arch-Linux&logoColor=white)
 ![macOS Catalina](https://img.shields.io/badge/macOS_Catalina-Hackintosh-000000?style=flat-square&logo=Apple&logoColor=white)
 ![Windows 11](https://img.shields.io/badge/Windows_11-Secondary-0078D6?style=flat-square&logo=Windows&logoColor=white)
 ![FreeBSD](https://img.shields.io/badge/FreeBSD-Unix-AB2B28?style=flat-square&logo=FreeBSD&logoColor=white)
-## Tutorial
+# Tutorial
 Here are some thing that u should install before run the script base on what os is your host computer
   #### Windows:
   - https://www.python.org/ftp/python/3.14.2/python-3.14.2-amd64.exe
