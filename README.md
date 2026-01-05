@@ -4,16 +4,16 @@
   </p>
 ---
 
-### Tested OS
+## Tested OS
 ![Linux](https://img.shields.io/badge/Arch_Linux-Main-1793D1?style=flat-square&logo=Arch-Linux&logoColor=white)
 ![macOS Catalina](https://img.shields.io/badge/macOS_Catalina-Hackintosh-000000?style=flat-square&logo=Apple&logoColor=white)
 ![Windows 11](https://img.shields.io/badge/Windows_11-Secondary-0078D6?style=flat-square&logo=Windows&logoColor=white)
 ![FreeBSD](https://img.shields.io/badge/FreeBSD-Unix-AB2B28?style=flat-square&logo=FreeBSD&logoColor=white)
-### Tutorial
+## Tutorial
 Here are some thing that u should install before run the script base on what os is your host computer
-  ## Windows:
+  ### Windows:
   - https://www.python.org/ftp/python/3.14.2/python-3.14.2-amd64.exe
-  ## Linux (depends)
+  ### Linux (depends)
 Gentoo Linux:
 - sudo emerge --ask python3
 Arch/Arch-Based
@@ -24,13 +24,13 @@ Debian/Ubuntu
 Other Linux
 - sudo (your package manager) python
 
-### How to run the script
+## How to run the script
 you just need to run:
 ```
 bash/zsh
 python3 ai_script.py
 ```
-### Tested Kernel
+## Tested Kernel
 ![Linux Kernel](https://img.shields.io/badge/Linux-6.7.x-FFCC00?style=flat-square&logo=Linux&logoColor=black)
 ![FreeBSD Kernel](https://img.shields.io/badge/FreeBSD-14.x-AB2B28?style=flat-square&logo=FreeBSD&logoColor=white)
 
