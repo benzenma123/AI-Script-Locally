@@ -10,23 +10,35 @@
 ![Windows 11](https://img.shields.io/badge/Windows_11-Secondary-0078D6?style=flat-square&logo=Windows&logoColor=white)
 ![FreeBSD](https://img.shields.io/badge/FreeBSD-Unix-AB2B28?style=flat-square&logo=FreeBSD&logoColor=white)
 # Tutorial
-Here are some thing that u should install before run the script base on what os is your host computer
+Here are some thing that u should install before run the script base on what os is your host computer, this include gpu driver for AMD and Intel
   #### Windows:
-  - https://www.python.org/ftp/python/3.14.2/python-3.14.2-amd64.exe
+  - Python: https://www.python.org/ftp/python/3.14.2/python-3.14.2-amd64.exe
+  - GPU Drivers: https://www.intel.com/content/www/us/en/support/detect.html
   #### Linux (depends):
 ##### Gentoo Linux:
-- sudo emerge --ask python3
+- Python: sudo emerge --ask python3
+- GPU Drivers: update VIDEO_CARDS and add "vulkan" flags to USE
+- GPU Drivers: emerge --ask media-libs/mesa dev-util/vulkan-tools
 ##### Arch/Arch-Based
-- sudo pacman -S python python3
-- yay -S python3
+- Python: sudo pacman -S python python3
+- Python: yay -S python3
+- GPU Drivers: sudo pacman -Syu mesa vulkan-intel intel-media-driver clinfo
 ##### Debian/Ubuntu
-- sudo apt install python3 python
-##### Other Linux
-- sudo (your package manager) python
+- Python: sudo apt install python3 python
+- GPU Drivers: sudo apt install mesa-vulkan-drivers vulkan-tools libvulkan1
+- GPU Drivers: sudo apt install intel-opencl-icd intel-level-zero-gpu
+##### Fedora Linux
+- Python: sudo dnf install python3
+- GPU Drivers: sudo dnf install mesa-vulkan-drivers vulkan-tools
+  #### MacOS:
+  - Python: sudo brew install python (its usually built-in)
+  - GPU Drivers: Built-in
 
 ## How to run the script
 you just need to run:
 ```
+git clone https://github.com/benzenma123/AI-Script-Locally
+cd AI-Script-Locally
 python3 ai_script.py
 ```
 # Tested Kernel
@@ -39,5 +51,10 @@ python3 ai_script.py
 # AI Model
 | Avalible model | Desscription | RAM Consuming |
 |----------------|--------------|---------------|
-|  Llama 3.2 1B  | Light AI Model for system under 8gb of RAM| 1.5Gb~|
-|MoonDream2| Not work yet as it url had some problem| 2Gb+
+|  Llama 3.2 1B  | Light AI Model for system under 8gb of RAM| 0.81Gb~ |
+|MoonDream2| Not work yet as it url had some problem| 2Gb+ |
+|Llama 3.2 3B| Pretty heavy AI model but needs more cpu cores/threads and RAM| 4Gb+
+|Gemma 2 2B| Pretty good AI model| 1.71Gb~ 
+|Qwen 2.5 1.5B| Good AI model for coding | 1.12Gb~
+|SmolLM2 1.7B| Fast/Clean| 1.06Gb~
+|Phi 3.5 mini| Microsoft's AI| 2.39Gb~
