@@ -58,3 +58,17 @@ python3 ai_script.py
 |Qwen 2.5 1.5B| Good AI model for coding | 1.12Gb~
 |SmolLM2 1.7B| Fast/Clean| 1.06Gb~
 |Phi 3.5 mini| Microsoft's AI| 2.39Gb~
+
+# GPU Driver Not Found Solution
+If the script cant find GPU then try these:
+- sudo usermod -aG render,video $USER
+- GGML_VULKAN_DEVICE=0
+- python ai_agent.py
+### Note:
+Log out after running these command to take effect
+
+# Decleration
+For AMD-Based system, downloads driver for AMD by yourself because im tired and dont have time for this. Sorry AMD Users
+
+# ⚖️ License & Disclaimer
+This project is for educational purposes. All models are subject to their respective creators' licenses (Meta, Google, Microsoft, Alibaba, etc.). Use responsibly. And If you do anything and getting sued, I don't care :)
