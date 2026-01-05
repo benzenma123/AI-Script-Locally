@@ -11,9 +11,9 @@
 ![FreeBSD](https://img.shields.io/badge/FreeBSD-Unix-AB2B28?style=flat-square&logo=FreeBSD&logoColor=white)
 ## Tutorial
 Here are some thing that u should install before run the script base on what os is your host computer
-  ### Windows:
+  #### Windows:
   - https://www.python.org/ftp/python/3.14.2/python-3.14.2-amd64.exe
-  ### Linux (depends)
+  #### Linux (depends)
 Gentoo Linux:
 - sudo emerge --ask python3
 Arch/Arch-Based
