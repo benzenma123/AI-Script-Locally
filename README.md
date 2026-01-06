@@ -58,7 +58,8 @@ python3 ai_script.py
 |Qwen 2.5 1.5B| Good AI model for coding | 1.12Gb~| ~1.1 GB
 |SmolLM2 1.7B| Fast/Clean| 1.06Gb~| ~1.0 GB
 |Phi 3.5 mini| Microsoft's AI| 2.39Gb~| ~2.2 GB
-|Deepseek R1 1.5B| Not Availible| ~2.0 GB| ~1.1 GB|
+|Deepseek R1 1.5B (Reasoning)| Not Availible| ~2.0 GB| ~1.1 GB|
+|Deepseek R1 8B (Smart Reasoning)| Not Availible| ~6.5 - 7.2 GB| 4.92 GB
 
 # GPU Driver Not Found Solution
 If the script cant find GPU then try these (linux only):
