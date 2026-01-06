@@ -60,7 +60,7 @@ python3 ai_script.py
 |Phi 3.5 mini| Microsoft's AI| 2.39Gb~
 
 # GPU Driver Not Found Solution
-If the script cant find GPU then try these:
+If the script cant find GPU then try these (linux only):
 - sudo usermod -aG render,video $USER
 - GGML_VULKAN_DEVICE=0
 - python ai_agent.py
