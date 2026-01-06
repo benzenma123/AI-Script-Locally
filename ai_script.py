@@ -74,6 +74,8 @@ MODELS = MODELS = [
     {"name": "Qwen 2.5 1.5B (Logic/Code)", "repo": "Qwen/Qwen2.5-1.5B-Instruct-GGUF", "file": "qwen2.5-1.5b-instruct-q4_k_m.gguf"},
     {"name": "Phi-3.5 Mini (Microsoft)", "repo": "bartowski/Phi-3.5-mini-instruct-GGUF", "file": "Phi-3.5-mini-instruct-Q4_K_M.gguf"},
     {"name": "SmolLM2 1.7B (Fast & Clean)", "repo": "bartowski/SmolLM2-1.7B-Instruct-GGUF", "file": "SmolLM2-1.7B-Instruct-Q4_K_M.gguf"},
+    {"name": "DeepSeek R1 1.5B (Reasoning)", "repo": "bartowski/DeepSeek-R1-Distill-Qwen-1.5B-GGUF", "file": "DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf"},
+    {"name": "DeepSeek R1 8B (Smart Reasoning)", "repo": "bartowski/DeepSeek-R1-Distill-Llama-8B-GGUF", "file": "DeepSeek-R1-Distill-Llama-8B-Q4_K_M.gguf"},
     {
         "name": "Moondream2 (Vision Engine - Fast)", 
         "repo": "yonigozlan/moondream2-gguf", 
@@ -93,13 +95,18 @@ def load_history():
     if os.path.exists(HISTORY_FILE):
         try:
             with open(HISTORY_FILE, "r") as f:
-                return json.load(f)
+                data = json.load(f)
+                if data and len(data) > 0:
+                    return data
         except:
             pass
-    # Default system prompt if no file exists
-    return [{"role": "system", "content": "You are a helpful assistant."}]
+    # Start with a User message instead of a System message
+    return [
+        {"role": "user", "content": "Hello AI! Let's start our chat."},
+        {"role": "assistant", "content": "Hello! I am ready. How can I help you?"}
+    ]
 def main():
-    console.print(Panel("SYSTEM MONITOR ACTIVE", title="[bold green]AI HUB[/]"))
+    console.print(Panel("SYSTEM MONITOR ACTIVE", title="[bold green]AI Menu[/]"))
     console.print(get_stats())
     
     for i, m in enumerate(MODELS):
@@ -120,7 +127,7 @@ def main():
 
     while True:
         console.print(get_stats())
-        query = Prompt.ask("\n[bold cyan]>>>[/]").strip()
+        query = Prompt.ask("\n[bold reverse cyan] USER [/] ").strip()
         if query.lower() in ["exit", "quit"]: break
         if query.lower() == "/clear":
             chat_history = [{"role": "system", "content": "You are a helpful assistant."}]
@@ -148,7 +155,7 @@ def main():
                 # ✅ This now sends the full conversation history!
                 output = llm.create_chat_completion(
                     messages=chat_history, 
-                    max_tokens=512
+                    max_tokens=1024
                 )
                 res = output["choices"][0]["message"]["content"].strip()
             else:
@@ -173,3 +180,4 @@ def main():
 if __name__ == "__main__":
     try: main()
     except KeyboardInterrupt: print("\nBye!")
+
