@@ -72,3 +72,7 @@ For AMD-Based system, downloads driver for AMD by yourself because im tired and 
 
 # ⚖️ License & Disclaimer
 This project is for educational purposes. All models are subject to their respective creators' licenses (Meta, Google, Microsoft, Alibaba, etc.). Use responsibly. And If you do anything and getting sued, I don't care :)
+
+# Supporter
+- benzenma123 (me)
+- (I will add u if u contact me and want to work with me)
