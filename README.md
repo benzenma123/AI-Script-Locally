@@ -49,15 +49,15 @@ python3 ai_script.py
 - You can run this script (after run this script the first time for installation) without internet, just need the system had python already and plug in the power since it using cpu only mode and might comsum a lot of energy and cpu cores/threads
 
 # AI Model
-| Avalible model | Desscription | RAM Consuming |
-|----------------|--------------|---------------|
-|  Llama 3.2 1B  | Light AI Model for system under 8gb of RAM| 0.81Gb~ |
-|MoonDream2| Not work yet as it url had some problem| 2Gb+ |
-|Llama 3.2 3B| Pretty heavy AI model but needs more cpu cores/threads and RAM| 4Gb+
-|Gemma 2 2B| Pretty good AI model| 1.71Gb~ 
-|Qwen 2.5 1.5B| Good AI model for coding | 1.12Gb~
-|SmolLM2 1.7B| Fast/Clean| 1.06Gb~
-|Phi 3.5 mini| Microsoft's AI| 2.39Gb~
+| Avalible model | Desscription | RAM Consuming | Storage Space Needed |
+|----------------|--------------|---------------|----------------------|
+|  Llama 3.2 1B  | Light AI Model for system under 8gb of RAM| 0.81Gb~ | ~750 MB |
+|MoonDream2| Not work yet as it url had some problem| 2Gb+ | ~850 MB|
+|Llama 3.2 3B| Pretty heavy AI model but needs more cpu cores/threads and RAM| 4Gb+ | ~2.0GB
+|Gemma 2 2B| Pretty good AI model| 1.71Gb~ | ~1.6 GB
+|Qwen 2.5 1.5B| Good AI model for coding | 1.12Gb~| ~1.1 GB
+|SmolLM2 1.7B| Fast/Clean| 1.06Gb~| ~1.0 GB
+|Phi 3.5 mini| Microsoft's AI| 2.39Gb~| ~2.2 GB
 
 # GPU Driver Not Found Solution
 If the script cant find GPU then try these (linux only):
