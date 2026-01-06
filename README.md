@@ -10,7 +10,7 @@
 ![Windows 11](https://img.shields.io/badge/Windows_11-Secondary-0078D6?style=flat-square&logo=Windows&logoColor=white)
 ![FreeBSD](https://img.shields.io/badge/FreeBSD-Unix-AB2B28?style=flat-square&logo=FreeBSD&logoColor=white)
 # Tutorial
-Here are some thing that u should install before run the script base on what os is your host computer, this include gpu driver for AMD and Intel
+Here are some dependencies that u should install before run the script base on what os is your host computer, this include gpu driver for Intel
   #### Windows:
   - Python: https://www.python.org/ftp/python/3.14.2/python-3.14.2-amd64.exe
   - GPU Drivers: https://www.intel.com/content/www/us/en/support/detect.html
