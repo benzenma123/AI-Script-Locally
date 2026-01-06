@@ -78,3 +78,14 @@ This project is for educational purposes. All models are subject to their respec
 # Supporter
 - benzenma123 (me)
 - (I will add u if u contact me and want to work with me)
+
+# Update Log
+#### 04/01/2025 20:30 log
+- First time make this repo
+- Had total 2 AI Model (Llama & Moondream)
+#### 05/01/2025 16:30 log
+- Add more AI Model (Moondream, Llama 3B, Gwen and Gemma)
+- Add /clear to clear AI memory
+#### 06/01/2025 15:39
+- Add Deepseek R1 (1B and 8B)
+- Fix error when using Gemma 
