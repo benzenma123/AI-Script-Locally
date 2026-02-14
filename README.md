@@ -10,7 +10,7 @@
 ![Windows 11](https://img.shields.io/badge/Windows_11-Secondary-0078D6?style=flat-square&logo=Windows&logoColor=white)
 ![FreeBSD](https://img.shields.io/badge/FreeBSD-Unix-AB2B28?style=flat-square&logo=FreeBSD&logoColor=white)
 # Tutorial
-Here are some dependencies that u should install before run the script base on what os is your host computer, this include gpu driver for Intel
+Here are some dependencies that u should install before run the script base on what os is your host computer, this include gpu driver for Intel (AMD & Nvidia will found later on)
   #### Windows:
   - Python: https://www.python.org/ftp/python/3.14.2/python-3.14.2-amd64.exe
   - GPU Drivers: https://www.intel.com/content/www/us/en/support/detect.html
@@ -33,7 +33,11 @@ Here are some dependencies that u should install before run the script base on w
   #### MacOS:
   - Python: sudo brew install python (its usually built-in)
   - GPU Drivers: Built-in
-
+# Tool need to Install
+Here are some tool you HAVE TO install to be able to run this script (Windows only)
+- Vulkan SDK: https://sdk.lunarg.com/sdk/download/1.4.341.1/windows/vulkansdk-windows-X64-1.4.341.1.exe
+- CMake: https://github.com/Kitware/CMake/releases/download/v4.2.3/cmake-4.2.3-windows-x86_64.msi
+- W64Devkit (required): https://github.com/skeeto/w64devkit/releases
 ## How to run the script
 you just need to run:
 ```
@@ -46,7 +50,8 @@ python3 ai_script.py
 ![FreeBSD Kernel](https://img.shields.io/badge/FreeBSD-14.x-AB2B28?style=flat-square&logo=FreeBSD&logoColor=white)
 ![Darwin Kernel](https://img.shields.io/badge/Darwin-XNU-000000?style=flat-square&logo=Apple&logoColor=white)
 ## Hints
-- You can run this script (after run this script the first time for installation) without internet, just need the system had python already and plug in the power since it using cpu only mode and might comsum a lot of energy and cpu cores/threads
+- You can run this script (after run this script the first time for installation) without internet, just need the system had python already and plug in the power since it using gpu only mode now and it will spike a litle power
+- Install the tool (W64Devkit) in the folder or else it will cause a error if install in the other place, CMake and Vulkan SDK can install in it default folder.
 
 # AI Model
 | Avalible model | Desscription | RAM Consuming | Storage Space Needed |
@@ -69,9 +74,8 @@ If the script cant find GPU then try these (linux only):
 ### Note:
 Log out after running these command to take effect
 
-# Decleration
-For AMD-Based system, downloads driver for AMD by yourself because im tired and dont have time for this. Sorry AMD Users
-
+# For Nvidia & AMD User
+For the Nvidia & AMD fellas, if you already had GPU driver then you just need to install Tool at the other section in here
 # ⚖️ License & Disclaimer
 This project is for educational purposes. All models are subject to their respective creators' licenses (Meta, Google, Microsoft, Alibaba, etc.). Use responsibly. And If you do anything and getting sued, I don't care :)
 
@@ -89,3 +93,7 @@ This project is for educational purposes. All models are subject to their respec
 #### 06/01/2025 15:39
 - Add Deepseek R1 (1B and 8B)
 - Fix error when using Gemma 
+#### 2/14/2026 8:58 AM
+- Fix the script
+- Actually work on GPU (include IGPU of all brand x86_64 only)
+- Still cannot work on other architechture yet
