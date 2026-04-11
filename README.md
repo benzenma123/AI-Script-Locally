@@ -3,6 +3,9 @@
     <img src="https://count.getloli.com/@benzenma123?theme=rule34" alt="Moe Counter" height="60" style="margin-center:15px;" />
 </p>
 
+# Note:
+- u should only Install the latest script in the Release section
+
 # Tested OS
 ![Linux](https://img.shields.io/badge/Arch_Linux-Main-1793D1?style=flat-square&logo=Arch-Linux&logoColor=white)
 ![Windows 11](https://img.shields.io/badge/Windows_11-Secondary-0078D6?style=flat-square&logo=Windows&logoColor=white)
@@ -122,7 +125,6 @@ If you already have GPU drivers installed, you only need the tools listed in the
 
 # ⚖️ License & Disclaimer
 - This project is for educational purposes. All models are subject to their respective creators' licenses (Meta, Google, Microsoft, Alibaba, etc.). Use responsibly. If you get sued, that's on you :)
-- And u should only Install the latest script in the Release section
 # Supporters
 - benzenma123 (me)
 - *(contact me if you want to contribute)*
