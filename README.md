@@ -14,40 +14,40 @@
 Here are the dependencies you should install before running the script, based on your OS.
 
 #### Windows:
-- Python: https://www.python.org/ftp/python/3.14.2/python-3.14.2-amd64.exe
+- Python 3.12 (recommended): https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe
 - GPU Drivers: https://www.intel.com/content/www/us/en/support/detect.html
+
+> ⚠️ **Use Python 3.12.** Python 3.14 is not supported by customtkinter yet and will cause the script to fail.
 
 #### Linux (depends on distro):
 
 ##### Arch / Arch-Based
-```bash
-sudo pacman -S cmake python python3
-sudo pacman -S vulkan-headers vulkan-icd-loader
 
-# Pick your GPU driver:
-sudo pacman -S vulkan-radeon      # AMD
-sudo pacman -S vulkan-intel       # Intel
-sudo pacman -S nvidia-utils       # NVIDIA
-```
+    sudo pacman -S cmake python python3 tk
+    sudo pacman -S vulkan-headers vulkan-icd-loader
+
+    # Pick your GPU driver:
+    sudo pacman -S vulkan-radeon      # AMD
+    sudo pacman -S vulkan-intel       # Intel
+    sudo pacman -S nvidia-utils       # NVIDIA
+
+> ⚠️ **`tk` is required.** Without it, customtkinter will fail to import even if installed.
 
 ##### Debian / Ubuntu
-```bash
-sudo apt install cmake python3 mesa-vulkan-drivers vulkan-tools libvulkan-dev
-# Intel only:
-sudo apt install intel-opencl-icd intel-level-zero-gpu
-```
+
+    sudo apt install cmake python3 python3-tk mesa-vulkan-drivers vulkan-tools libvulkan-dev
+    # Intel only:
+    sudo apt install intel-opencl-icd intel-level-zero-gpu
 
 ##### Fedora Linux
-```bash
-sudo dnf install cmake python3 mesa-vulkan-drivers vulkan-tools
-```
+
+    sudo dnf install cmake python3 python3-tkinter mesa-vulkan-drivers vulkan-tools
 
 ##### Gentoo Linux
-```bash
-sudo emerge --ask python3
-# Add "vulkan" to USE flags, then:
-emerge --ask media-libs/mesa dev-util/vulkan-tools
-```
+
+    sudo emerge --ask python3
+    # Add "vulkan" to USE flags, then:
+    emerge --ask media-libs/mesa dev-util/vulkan-tools
 
 # Tools to Install (Windows Only)
 These are **required** on Windows before running the script:
@@ -58,11 +58,11 @@ These are **required** on Windows before running the script:
 > **Note:** W64Devkit must be in the same folder as the script — it's auto-detected. CMake and Vulkan SDK can be installed to their default locations.
 
 # How to Run
-```bash
-git clone https://github.com/benzenma123/AI-Script-Locally
-cd AI-Script-Locally
-python3 ai_script.py
-```
+
+    git clone https://github.com/benzenma123/AI-Script-Locally
+    cd AI-Script-Locally
+    python3.12 ai_script.py
+
 The script will automatically create a virtual environment and install all required Python packages on first run.
 
 # AI Models
@@ -79,13 +79,37 @@ The script will automatically create a virtual environment and install all requi
 | DeepSeek R1 8B | Smart reasoning | ~6.5–7.2 GB | ~4.92 GB |
 | Moondream2 | Vision model (WIP) | 2 GB+ | ~850 MB |
 
-# GPU Driver Not Found (Linux Fix)
+# Common Errors & Fixes
+
+### tkinter not found (Linux)
+If you see an import error related to tkinter or customtkinter fails:
+
+    # Arch:
+    sudo pacman -S tk
+
+    # Debian/Ubuntu:
+    sudo apt install python3-tk
+
+    # Fedora:
+    sudo dnf install python3-tkinter
+
+### Vulkan / GPU not found (Linux)
 If the script can't find your GPU:
-```bash
-sudo usermod -aG render,video $USER
-GGML_VULKAN_DEVICE=0 python ai_script.py
-```
-> Log out and back in after running `usermod` for it to take effect.
+
+    sudo pacman -S vulkan-headers vulkan-icd-loader   # Arch
+    sudo usermod -aG render,video $USER
+    # Log out and back in, then:
+    GGML_VULKAN_DEVICE=0 python3.12 ai_script.py
+
+### Script loops forever on install
+This happens when Python 3.14 is used. Use Python 3.12 instead:
+
+    sudo pacman -S python312   # Arch
+    rm -rf ai_venv
+    python3.12 ai_script.py
+
+### customtkinter crashes on macOS
+macOS is not supported. A bug in darkdetect causes a hard abort on macOS 15 build 1506 and there is no fix yet without a system update.
 
 # For NVIDIA & AMD Users
 If you already have GPU drivers installed, you only need the tools listed in the "Tools to Install" section (Windows) or the Vulkan packages for your distro (Linux).
@@ -94,6 +118,7 @@ If you already have GPU drivers installed, you only need the tools listed in the
 - After the first run, the script works **offline** — no internet needed
 - Models are cached in `~/.cache/huggingface` and won't re-download
 - Keep your device plugged in — GPU mode draws more power
+- Use **Python 3.12** for best compatibility
 
 # ⚖️ License & Disclaimer
 This project is for educational purposes. All models are subject to their respective creators' licenses (Meta, Google, Microsoft, Alibaba, etc.). Use responsibly. If you get sued, that's on you :)
@@ -126,3 +151,11 @@ This project is for educational purposes. All models are subject to their respec
 - Auto-detects GPU backend (Vulkan on both platforms)
 - w64devkit auto-detection on Windows
 - macOS dropped due to customtkinter/darkdetect compatibility issue
+
+#### 04/11/2026
+- Fixed infinite install loop caused by Python 3.14 incompatibility
+- Added tkinter system check with helpful error messages per distro
+- Added vulkan-headers and vulkan-icd-loader to Arch install steps (fixes llama-cpp-python build failure)
+- Added tk to Arch install steps (fixes customtkinter import failure)
+- Script now exits cleanly with instructions instead of looping on import errors
+- Confirmed working on Arch Linux with Python 3.12
