@@ -10,6 +10,11 @@
 ![Linux](https://img.shields.io/badge/Arch_Linux-Main-1793D1?style=flat-square&logo=Arch-Linux&logoColor=white)
 ![Windows 11](https://img.shields.io/badge/Windows_11-Secondary-0078D6?style=flat-square&logo=Windows&logoColor=white)
 
+# Image
+<img width="945" height="1022" alt="260411_16h39m53s_screenshot" src="https://github.com/user-attachments/assets/8b819b87-c778-4cf8-82b4-f42015a15fc6" />
+<img width="945" height="1022" alt="260411_16h40m31s_screenshot" src="https://github.com/user-attachments/assets/caaadaad-b10b-4ac0-af8d-28a00e91b14c" />
+
+
 > ⚠️ **macOS is not supported.** Due to a bug in customtkinter/darkdetect that causes a hard abort on macOS 15 (build 1506), the script is Windows and Linux only for now.
 
 # Tutorial
