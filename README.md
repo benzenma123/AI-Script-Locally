@@ -27,26 +27,26 @@ sudo pacman -S cmake python python3
 sudo pacman -S vulkan-radeon      # AMD
 sudo pacman -S vulkan-intel       # Intel
 sudo pacman -S nvidia-utils       # NVIDIA
-` `` 
+```
 
 ##### Debian / Ubuntu
-` ``bash
+```bash
 sudo apt install cmake python3 mesa-vulkan-drivers vulkan-tools libvulkan-dev
 # Intel only:
 sudo apt install intel-opencl-icd intel-level-zero-gpu
-` ``
+```
 
 ##### Fedora Linux
-` ``bash
+```bash
 sudo dnf install cmake python3 mesa-vulkan-drivers vulkan-tools
-` ``
+```
 
 ##### Gentoo Linux
-` ``bash
+```bash
 sudo emerge --ask python3
 # Add "vulkan" to USE flags, then:
 emerge --ask media-libs/mesa dev-util/vulkan-tools
-` ``
+```
 
 # Tools to Install (Windows Only)
 These are **required** on Windows before running the script:
@@ -57,11 +57,11 @@ These are **required** on Windows before running the script:
 > **Note:** W64Devkit must be in the same folder as the script — it's auto-detected. CMake and Vulkan SDK can be installed to their default locations.
 
 # How to Run
-` ``bash
+```bash
 git clone https://github.com/benzenma123/AI-Script-Locally
 cd AI-Script-Locally
 python3 ai_script.py
-` ``
+```
 The script will automatically create a virtual environment and install all required Python packages on first run.
 
 # AI Models
@@ -80,10 +80,10 @@ The script will automatically create a virtual environment and install all requi
 
 # GPU Driver Not Found (Linux Fix)
 If the script can't find your GPU:
-` ``bash
+```bash
 sudo usermod -aG render,video $USER
 GGML_VULKAN_DEVICE=0 python ai_script.py
-` ``
+```
 > Log out and back in after running `usermod` for it to take effect.
 
 # For NVIDIA & AMD Users
@@ -125,5 +125,3 @@ This project is for educational purposes. All models are subject to their respec
 - Auto-detects GPU backend (Vulkan on both platforms)
 - w64devkit auto-detection on Windows
 - macOS dropped due to customtkinter/darkdetect compatibility issue
-```
-
