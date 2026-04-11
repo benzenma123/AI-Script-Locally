@@ -22,6 +22,7 @@ Here are the dependencies you should install before running the script, based on
 ##### Arch / Arch-Based
 ```bash
 sudo pacman -S cmake python python3
+sudo pacman -S vulkan-headers vulkan-icd-loader
 
 # Pick your GPU driver:
 sudo pacman -S vulkan-radeon      # AMD
