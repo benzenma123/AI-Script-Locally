@@ -121,8 +121,8 @@ If you already have GPU drivers installed, you only need the tools listed in the
 - Use **Python 3.12** for best compatibility
 
 # ⚖️ License & Disclaimer
-This project is for educational purposes. All models are subject to their respective creators' licenses (Meta, Google, Microsoft, Alibaba, etc.). Use responsibly. If you get sued, that's on you :)
-
+- This project is for educational purposes. All models are subject to their respective creators' licenses (Meta, Google, Microsoft, Alibaba, etc.). Use responsibly. If you get sued, that's on you :)
+- And u should only Install the latest script in the Release section
 # Supporters
 - benzenma123 (me)
 - *(contact me if you want to contribute)*
