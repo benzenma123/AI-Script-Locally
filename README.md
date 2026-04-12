@@ -12,7 +12,6 @@
 > ⚠️ **macOS is not supported.** Due to a bug in customtkinter/darkdetect that causes a hard abort on macOS 15 (build 1506), the script is Windows and Linux only for now.
 
 # Image
-<img width="945" height="1022" alt="260411_16h39m53s_screenshot" src="https://github.com/user-attachments/assets/8b819b87-c778-4cf8-82b4-f42015a15fc6" />
 <img width="945" height="1022" alt="260411_16h40m31s_screenshot" src="https://github.com/user-attachments/assets/caaadaad-b10b-4ac0-af8d-28a00e91b14c" />
 
 
@@ -69,7 +68,8 @@ These are **required** on Windows before running the script:
 
     
     wget https://github.com/benzenma123/AI-Script-Locally/releases/download/v0.0.4-official/ai_script.py
-
+For Windows user:
+https://github.com/benzenma123/AI-Script-Locally/releases/download/v0.0.4-official/ai_script.py
 The script will automatically create a virtual environment and install all required Python packages on first run.
 
 # AI Models
