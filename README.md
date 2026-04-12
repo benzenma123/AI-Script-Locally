@@ -70,6 +70,8 @@ These are **required** on Windows before running the script:
     git clone https://github.com/benzenma123/AI-Script-Locally
     cd AI-Script-Locally
     python3.12 ai_script.py
+    OR:
+    https://github.com/benzenma123/AI-Script-Locally/releases/download/v0.0.4-official/ai_script.py
 
 The script will automatically create a virtual environment and install all required Python packages on first run.
 
