@@ -64,7 +64,7 @@ These are **required** on Windows before running the script:
 
 > **Note:** W64Devkit must be in the same folder as the script — it's auto-detected. CMake and Vulkan SDK can be installed to their default locations.
 
-# How to Run
+# How to Run (Linux)
 
     
     wget https://github.com/benzenma123/AI-Script-Locally/releases/download/v0.0.4-official/ai_script.py
