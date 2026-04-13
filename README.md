@@ -67,9 +67,9 @@ These are **required** on Windows before running the script:
 # How to Run (Linux)
 
     
-    wget https://github.com/benzenma123/AI-Script-Locally/releases/download/v0.0.4-official/ai_script.py
+    wget https://github.com/benzenma123/AI-Script-Locally/releases/download/v0.0.5-official/code.py
 ## For Windows user:
-- https://github.com/benzenma123/AI-Script-Locally/releases/download/v0.0.4-official/ai_script.py
+- https://github.com/benzenma123/AI-Script-Locally/releases/download/v0.0.5-official/code.py
 ### Smol note:
 The script will automatically create a virtual environment and install all required Python packages on first run.
 
