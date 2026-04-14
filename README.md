@@ -4,17 +4,16 @@
 </p>
 
 # Note:
-- u should only Install the latest script in the Release section
+- Install the latest script from the Release section only
 
 # Tested OS
 ![Linux](https://img.shields.io/badge/Arch_Linux-Main-1793D1?style=flat-square&logo=Arch-Linux&logoColor=white)
 ![Windows 11](https://img.shields.io/badge/Windows_11-Secondary-0078D6?style=flat-square&logo=Windows&logoColor=white)
+
 > ⚠️ **macOS is not supported.** Due to a bug in customtkinter/darkdetect that causes a hard abort on macOS 15 (build 1506), the script is Windows and Linux only for now.
 
 # Image
 <img width="945" height="1022" alt="260411_16h40m31s_screenshot" src="https://github.com/user-attachments/assets/caaadaad-b10b-4ac0-af8d-28a00e91b14c" />
-
-
 
 # Tutorial
 
@@ -66,12 +65,27 @@ These are **required** on Windows before running the script:
 
 # How to Run (Linux)
 
-    
-    wget https://github.com/benzenma123/AI-Script-Locally/releases/download/v0.0.5-official/code.py
+    wget https://github.com/benzenma123/AI-Script-Locally/releases/download/v0.0.6-official/ai_script.py
+
 ## For Windows user:
-- https://github.com/benzenma123/AI-Script-Locally/releases/download/v0.0.5-official/code.py
+- https://github.com/benzenma123/AI-Script-Locally/releases/download/v0.0.6-official/ai_script.py
+
 ### Smol note:
 The script will automatically create a virtual environment and install all required Python packages on first run.
+
+On startup, the script will ask you to choose between GUI and TUI mode:
+
+    ╔══════════════════════════════╗
+    ║       BEN AI - Launcher      ║
+    ╠══════════════════════════════╣
+    ║  [1] GUI  - Graphical mode   ║
+    ║  [2] TUI  - Terminal mode    ║
+    ╚══════════════════════════════╝
+
+#### TUI Commands
+- Type your message and press Enter to send
+- Type `new` to start a fresh session
+- Type `exit` to quit
 
 # AI Models
 
@@ -86,6 +100,9 @@ The script will automatically create a virtual environment and install all requi
 | DeepSeek R1 1.5B | Reasoning model | ~2.0 GB | ~1.1 GB |
 | DeepSeek R1 8B | Smart reasoning | ~6.5–7.2 GB | ~4.92 GB |
 | Moondream2 | Vision model (WIP) | 2 GB+ | ~850 MB |
+| Qwen 2.5 Coder 1.5B | Best for coding tasks | ~1.1 GB | ~1.1 GB |
+| Mistral 7B | Best quality at 7B | ~4.5 GB | ~4.1 GB |
+| TinyLlama 1.1B | Ultra lightweight fallback | ~0.7 GB | ~670 MB |
 
 # Common Errors & Fixes
 
@@ -127,9 +144,11 @@ If you already have GPU drivers installed, you only need the tools listed in the
 - Models are cached in `~/.cache/huggingface` and won't re-download
 - Keep your device plugged in — GPU mode draws more power
 - Use **Python 3.12** for best compatibility
+- TUI mode works great over SSH or on headless machines
 
 # ⚖️ License & Disclaimer
 - This project is for educational purposes. All models are subject to their respective creators' licenses (Meta, Google, Microsoft, Alibaba, etc.). Use responsibly. If you get sued, that's on you :)
+
 # Supporters
 - benzenma123 (me)
 - *(contact me if you want to contribute)*
@@ -166,3 +185,10 @@ If you already have GPU drivers installed, you only need the tools listed in the
 - Added tk to Arch install steps (fixes customtkinter import failure)
 - Script now exits cleanly with instructions instead of looping on import errors
 - Confirmed working on Arch Linux with Python 3.12
+
+#### 04/13/2026
+- Added TUI (terminal) mode — run the AI without a GUI, great for SSH and headless setups
+- Launcher now asks GUI or TUI at startup
+- Multi-session chat — each history entry now has its own isolated chat window
+- Streaming text output in both GUI and TUI mode
+- Added 3 new models: Qwen 2.5 Coder 1.5B, Mistral 7B, TinyLlama 1.1B
