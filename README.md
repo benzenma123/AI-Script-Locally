@@ -75,7 +75,6 @@ Direct launch:
 ```bash
 python3 ai_script.py -g       # GUI mode
 python3 ai_script.py -u       # TUI mode
-python3 ai_script.py -g -t    # GUI + test mode
 ```
 
 The script will automatically create a virtual environment and install all required Python packages on first run.
@@ -90,12 +89,11 @@ On startup without arguments, it shows:
   Options:
    -g  --gui      GUI mode
    -u  --tui      TUI mode
-   -t  --testmode  Test mode
+
 
   Examples:
    python3 ai_script.py -g      # GUI mode
    python3 ai_script.py -u      # TUI mode
-   python3 ai_script.py -g -t   # GUI + test mode
 ***************************************
 ```
 
