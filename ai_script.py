@@ -1,3 +1,4 @@
+# Do not use this file, its decripricated
 import os, sys, subprocess, venv, json, threading, platform
 from datetime import datetime
 
@@ -434,3 +435,5 @@ if __name__ == "__main__":
         run_tui()
     else:
         run_gui()
+
+
