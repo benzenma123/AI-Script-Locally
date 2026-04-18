@@ -67,14 +67,14 @@ These are **required** on Windows before running the script:
 
 Show menu:
 ```bash
-python3 opencode.py
+python3 ai_script.py
 ```
 
 Direct launch:
 ```bash
-python3 opencode.py -g       # GUI mode
-python3 opencode.py -u       # TUI mode
-python3 opencode.py -g -t    # GUI + test mode
+python3 ai_script.py -g       # GUI mode
+python3 ai_script.py -u       # TUI mode
+python3 ai_script.py -g -t    # GUI + test mode
 ```
 
 The script will automatically create a virtual environment and install all required Python packages on first run.
@@ -84,7 +84,7 @@ On startup without arguments, it shows:
 ***************************************
       ♡ AI Launcher ♡
 ***************************************
-  Usage: python3 opencode.py [options]
+  Usage: python3 ai_script.py [options]
 
   Options:
    -g  --gui      GUI mode
@@ -92,9 +92,9 @@ On startup without arguments, it shows:
    -t  --testmode  Test mode
 
   Examples:
-   python3 opencode.py -g      # GUI mode
-   python3 opencode.py -u      # TUI mode
-   python3 opencode.py -g -t   # GUI + test mode
+   python3 ai_script.py -g      # GUI mode
+   python3 ai_script.py -u      # TUI mode
+   python3 ai_script.py -g -t   # GUI + test mode
 ***************************************
 ```
 
