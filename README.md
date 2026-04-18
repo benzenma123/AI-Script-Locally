@@ -63,46 +63,135 @@ These are **required** on Windows before running the script:
 
 > **Note:** W64Devkit must be in the same folder as the script — it's auto-detected. CMake and Vulkan SDK can be installed to their default locations.
 
-# How to Run (Linux)
+# How to Run
 
-    wget https://github.com/benzenma123/AI-Script-Locally/releases/download/v0.0.6-official/ai_script.py
+Show menu:
+```bash
+python3 opencode.py
+```
 
-## For Windows user:
-- https://github.com/benzenma123/AI-Script-Locally/releases/download/v0.0.6-official/ai_script.py
+Direct launch:
+```bash
+python3 opencode.py -g       # GUI mode
+python3 opencode.py -u       # TUI mode
+python3 opencode.py -g -t    # GUI + test mode
+```
 
-### Smol note:
 The script will automatically create a virtual environment and install all required Python packages on first run.
 
-On startup, the script will ask you to choose between GUI and TUI mode:
+On startup without arguments, it shows:
+```
+***************************************
+      ♡ AI Launcher ♡
+***************************************
+  Usage: python3 opencode.py [options]
 
-    ╔══════════════════════════════╗
-    ║       BEN AI - Launcher      ║
-    ╠══════════════════════════════╣
-    ║  [1] GUI  - Graphical mode   ║
-    ║  [2] TUI  - Terminal mode    ║
-    ╚══════════════════════════════╝
+  Options:
+   -g  --gui      GUI mode
+   -u  --tui      TUI mode
+   -t  --testmode  Test mode
 
-#### TUI Commands
-- Type your message and press Enter to send
-- Type `new` to start a fresh session
-- Type `exit` to quit
+  Examples:
+   python3 opencode.py -g      # GUI mode
+   python3 opencode.py -u      # TUI mode
+   python3 opencode.py -g -t   # GUI + test mode
+***************************************
+```
 
 # AI Models
 
-| Model | Description | RAM Usage | Storage |
-|-------|-------------|-----------|---------|
-| Llama 3.2 1B | Light model for systems under 8GB RAM | ~0.81 GB | ~750 MB |
-| Llama 3.2 3B | Heavier model, needs more CPU cores/RAM | 4 GB+ | ~2.0 GB |
-| Gemma 2 2B | Good general model | ~1.71 GB | ~1.6 GB |
-| Qwen 2.5 1.5B | Good for coding | ~1.12 GB | ~1.1 GB |
-| SmolLM2 1.7B | Fast and clean | ~1.06 GB | ~1.0 GB |
-| Phi-3.5 Mini | Microsoft's model | ~2.39 GB | ~2.2 GB |
-| DeepSeek R1 1.5B | Reasoning model | ~2.0 GB | ~1.1 GB |
-| DeepSeek R1 8B | Smart reasoning | ~6.5–7.2 GB | ~4.92 GB |
-| Moondream2 | Vision model (WIP) | 2 GB+ | ~850 MB |
-| Qwen 2.5 Coder 1.5B | Best for coding tasks | ~1.1 GB | ~1.1 GB |
-| Mistral 7B | Best quality at 7B | ~4.5 GB | ~4.1 GB |
-| TinyLlama 1.1B | Ultra lightweight fallback | ~0.7 GB | ~670 MB |
+### Text & Reasoning
+| Model | Description | RAM |
+|-------|-------------|-----|
+| Llama 3.2 1B | Light model for systems under 8GB RAM | ~0.81 GB |
+| Llama 3.2 3B | Heavier model, needs more CPU cores/RAM | ~2.0 GB |
+| Gemma 2 2B | Good general model | ~1.71 GB |
+| Qwen 2.5 1.5B | Good for coding | ~1.12 GB |
+| Phi-3.5 Mini | Microsoft's model | ~2.39 GB |
+| DeepSeek R1 1.5B | Reasoning model | ~2.0 GB |
+| DeepSeek R1 8B | Smart reasoning | ~6.5-7.2 GB |
+
+### Coding
+| Model | Description | RAM |
+|-------|-------------|-----|
+| Qwen 2.5 Coder 1.5B | Best for coding tasks | ~1.1 GB |
+| CodeLlama 7B | Code generation | ~4.0 GB |
+| CodeLlama 13B | More powerful code | ~7.3 GB |
+
+### Chat
+| Model | Description | RAM |
+|-------|-------------|-----|
+| Mistral 7B | Best quality at 7B | ~4.5 GB |
+| Mistral Nemo 12B | Larger chat model | ~7.0 GB |
+| Neural Chat 7B | Intel's chat model | ~4.0 GB |
+| TinyLlama 1.1B | Ultra lightweight fallback | ~0.7 GB |
+
+### Roleplay (NEW!)
+| Model | Description | RAM |
+|-------|-------------|-----|
+| Peach 9B Roleplay | Popular RP model | ~5.5 GB |
+| Soliloquy 8B | Narrative style | ~4.9 GB |
+| RP Llama 3 8B | Character roleplay | ~4.9 GB |
+| Violet Lotus 12B | Highly recommended RP | ~7.0 GB |
+| Violet Twilight | Great for storytelling | ~7.0 GB |
+| Wayfarer 12B | Character depth | ~7.0 GB |
+| And more... | | |
+
+# Features (NEW!)
+
+### 16 Themes/Personas
+- Felix Argyle (Re:Zero cat boy)
+- Rem (Re:Zero maid)
+- Emilia (Re:Zero half-elf)
+- Natsuki Subaru (Re:Zero)
+- Astolfo (Fate)
+- Remu Osamu
+- Zero Tou
+- Kamen Rider Zio
+- Kamen Rider Build
+- Kamen Rider Ex-Aid
+- Kamen Rider Kuuga
+- Kamen Rider Agito
+- Kamen Rider Wizard
+- HyDE (Hyprland)
+- Linux Tux
+- Default (Professional Assistant)
+
+### GPU Detection
+- **NVIDIA** via nvidia-smi
+- **AMD/APU** via Vulkan
+- **Intel** via Vulkan
+- Auto-detects best backend
+
+### Content Filter (NEW!)
+The script includes an automatic content filter that enforces legal and ethical boundaries. It blocks inappropriate content involving minors. This is ALWAYS ON in the published version and cannot be bypassed.
+
+Violations:
+1. Warning + message blurred
+2. 1-day ban
+3. 5-day ban
+4. Permanent ban
+
+### Settings Menu
+- Context size (n_ctx): 2048-16384
+- Temperature: 0.1-2.0
+- Max tokens: 256-4096
+- GPU layers: 0-35
+- System prompt editor
+
+### UI Features
+- Custom dark theme per persona
+- Dynamic background (Unsplash)
+- Chat history sidebar
+- Model dropdown selector
+- Real-time stats (RAM, CPU, GPU, Tokens)
+- Stop generation button
+
+### TUI Commands
+- Type your message and press Enter to send
+- Type `new` to start a fresh session
+- Type `exit` to quit
+- Search models with keywords: "llama", "code", "char", "7b"
 
 # Common Errors & Fixes
 
@@ -192,3 +281,15 @@ If you already have GPU drivers installed, you only need the tools listed in the
 - Multi-session chat — each history entry now has its own isolated chat window
 - Streaming text output in both GUI and TUI mode
 - Added 3 new models: Qwen 2.5 Coder 1.5B, Mistral 7B, TinyLlama 1.1B
+
+#### 04/17/2026 (MAJOR UPDATE)
+- **Added 16 Themes/Personas**: Felix Argyle, Rem, Emilia, Subaru, Astolfo, Kamen Rider series, HyDE, Linux Tux, Default
+- **Added 46+ Models**: Including roleplay models (Violet Lotus, Wayfarer, etc.)
+- **Added Content Filter**: Automatic blocking of inappropriate content involving minors
+- **Added Settings Menu**: Context size, temperature, max tokens, GPU layers, system prompt editor
+- **Added Token Counter**: Tracks total tokens per session
+- **Added CLI Arguments**: -g (GUI), -u (TUI), -t (test mode)
+- **Added Startup Menu**: Shows usage instructions when run without arguments
+- **Improved GPU Detection**: Now detects NVIDIA, AMD, Intel automatically
+- **Added Chat History**: Auto-saves to JSON files
+- **Added Stop Button**: Cancel generation mid-response
