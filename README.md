@@ -14,6 +14,7 @@
 
 # Image
 <img width="945" height="1022" alt="260411_16h40m31s_screenshot" src="https://github.com/user-attachments/assets/caaadaad-b10b-4ac0-af8d-28a00e91b14c" />
+- this image is decrepricated, no pic will update
 
 # Tutorial
 
