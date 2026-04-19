@@ -5,6 +5,12 @@
 
 # Note:
 - Install the latest script from the Release section only
+- **Get free HF token**: https://huggingface.co/settings/tokens
+
+# Premium System
+- **Free tier**: Vocaloids only (Miku, Teto, Neru, Gumi) + 3 basic models
+- **Premium ($1/year or $3/lifetime)**: All themes + all models + self-unban
+- Buy keys: https://chauduc.gumroad.com/l/benzenma123-product-key
 
 # Tested OS
 ![Linux](https://img.shields.io/badge/Arch_Linux-Main-1793D1?style=flat-square&logo=Arch-Linux&logoColor=white)
@@ -138,23 +144,19 @@ On startup without arguments, it shows:
 
 # Features (NEW!)
 
-### 16 Themes/Personas
-- Felix Argyle (Re:Zero cat boy)
-- Rem (Re:Zero maid)
-- Emilia (Re:Zero half-elf)
-- Natsuki Subaru (Re:Zero)
-- Astolfo (Fate)
-- Remu Osamu
-- Zero Tou
-- Kamen Rider Zio
-- Kamen Rider Build
-- Kamen Rider Ex-Aid
-- Kamen Rider Kuuga
-- Kamen Rider Agito
-- Kamen Rider Wizard
-- HyDE (Hyprland)
-- Linux Tux
-- Default (Professional Assistant)
+### 21 Themes/Personas
+- **Re:Zero**: Felix Argyle, Rem, Emilia, Subaru
+- **Fate**: Astolfo
+- **Kamen Rider**: Zio, Build, Ex-Aid, Kuuga, Agito, Wizard
+- **Anime**: Remu, Zero, Gojo, Levi, Naruto, Goku, Luffy, 2B
+- **Vocaloids** (FREE): Miku, Teto, Neru, Gumi
+- HyDE (Hyprland), Linux Tux, Default
+
+### Premium Tiers
+| Tier | Themes | Models | Ban |
+|------|--------|--------|-----|
+| Free | Vocaloids only | 3 basic | Permanent (2nd violation) |
+| Premium | All 21 | All 46+ | Lenient (10hrs → 3 days → 30 days) |
 
 ### GPU Detection
 - **NVIDIA** via nvidia-smi
@@ -292,3 +294,13 @@ If you already have GPU drivers installed, you only need the tools listed in the
 - **Improved GPU Detection**: Now detects NVIDIA, AMD, Intel automatically
 - **Added Chat History**: Auto-saves to JSON files
 - **Added Stop Button**: Cancel generation mid-response
+
+#### 04/19/2026 (v2.5)
+- **Added 4 Vocaloid themes**: Miku, Teto, Neru, Gumi (FREE tier)
+- **Added Premium System**: $1/year or $3/lifetime
+- **Added Gumroad links**: Buy keys directly in app
+- **Added startup key dialog**: Enter key on startup
+- **Improved GPU labels**: Now shows "Dedicated" vs "Integrated"
+- **Updated content filter**: Added leetspeak detection
+- **Machine ban system**: Permanent bans for free, lenient for premium (10hrs → 3 days → 30 days)
+- **21 themes total**
