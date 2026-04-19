@@ -10,7 +10,8 @@
 # Premium System
 - **Free tier**: Vocaloids only (Miku, Teto, Neru, Gumi) + 3 basic models
 - **Premium ($1/year or $3/lifetime)**: All themes + all models + self-unban
-- Buy keys: https://chauduc.gumroad.com/l/benzenma123-product-key
+- Buy keys (1$/year): https://chauduc.gumroad.com/l/benzenma123-product-key
+- Buy keys (3$/lifetime): https://chauduc.gumroad.com/l/benzenma123-lifetime-key
 
 # Tested OS
 ![Linux](https://img.shields.io/badge/Arch_Linux-Main-1793D1?style=flat-square&logo=Arch-Linux&logoColor=white)
